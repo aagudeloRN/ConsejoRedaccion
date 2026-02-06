@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Ruta N Brand Colors */
+  --color-rutan-primary: #253d36;
+  /* Verde Oscuro */
+  --color-rutan-secondary: #c0d400;
+  /* Verde */
+  --color-rutan-tertiary: #00b8a3;
+  /* Agua Marina */
+  --color-rutan-blue: #0068ff;
+  /* Azul */
+  --color-rutan-yellow: #ffca00;
+  /* Amarillo */
+  --color-rutan-orange: #ff4c17;
+  /* Rojo-Naranja */
+
+  /* Shimmer Animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  --animate-shimmer: shimmer 2s infinite linear;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 1000px 100%;
+  @apply rounded bg-gray-200;
+}
+
+/* Tooltip micro-interaction */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  position: absolute;
+  z-index: 50;
+  /* Sufficient but not overkill */
+  bottom: 115%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateY(10px);
+  pointer-events: none;
+  width: 28rem;
+  /* 448px */
+}
+
+.tooltip-container:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sticky Header Utility */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* Lower than active row */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Row Stacking Fix */
+.premium-row {
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.2s;
+}
+
+.premium-row:hover {
+  z-index: 40;
+  /* Above header (10) and other rows (1) */
+}
