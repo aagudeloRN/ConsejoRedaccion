@@ -36,28 +36,13 @@ docker compose exec backend python seed.py
 
 ### ✅ Implementado
 
+- [x] **UI Premium & UX**
+  - Tooltips enriquecidos (Prioridad Impacto Ruta N)
+  - Sticky Headers en tablas
+  - Skeleton Loaders para mejor carga
+  - Paginación cliente (10 items/página)
+  - Micro-interacciones y resaltado de búsqueda
 - [x] **Registro de Noticias** con IA (Gemini)
-  - Carga URL o PDF
-  - Análisis automático (resumen, clasificación, keywords)
-  - Validación y edición por usuario
-- [x] **Gestión de Usuarios**
-  - Login con contraseña
-  - 4 roles: Administrador, Dirección Ejecutiva, Postulador, Lector
-  - Activar/desactivar usuarios
-- [x] **Consejo de Redacción**
-  - Votación (impacto + relevancia)
-  - Matriz de priorización visual
-  - Cierre de semana con historial
-- [x] **Asignación de Tareas**
-  - Asignar corresponsales
-  - Enfoque editorial
-  - Vista "Mis Asignaciones"
-- [x] **Estadísticas**
-  - Desempeño por usuario (postulaciones, priorizadas, asignadas)
-  - Solo usuarios activos
-- [x] **Categorización**: Nerd, Geek, Trend
-- [x] **Búsqueda** por título/contenido
-- [x] **Archivo de Noticias**
 
 ### 🚧 En Roadmap
 
@@ -211,16 +196,16 @@ Ver [DEVELOPMENT.md](./docs/DEVELOPMENT.md) para guía completa.
 
 ## 📝 Changelog
 
+### v1.1.0 (2026-02-06)
+
+- ✅ UI/UX Premium (Tooltips, Sticky Headers, Skeletons)
+- ✅ Paginación y Resaltado de búsqueda
+- ✅ Armonización de roles (Admin/Administrador)
+- ✅ Histórico de cambios consolidado en `docs/SUMMARY.md`
+
 ### v1.0.0 (2026-01-29)
 
 - ✅ MVP completo
-- ✅ Login + 4 roles
-- ✅ Registro con IA
-- ✅ Consejo + votación
-- ✅ Asignaciones
-- ✅ Estadísticas
-- ✅ Categorías (Nerd/Geek/Trend)
-- ✅ Optimización de código (-35% backend, +performance frontend)
 
 ---
 
